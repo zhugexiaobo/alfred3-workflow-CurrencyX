@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*-
 import json,sys
-from workflow import Workflow, web
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from workflow import Workflow3
 
 subtitle = 'Remove currency from panel'
 
@@ -23,7 +20,7 @@ def main(wf):
     args = [x.upper() for x in args]
     length = len(args)
     f = open('config.json', 'r')
-    j_config = json.load(f, 'utf-8')
+    j_config = json.load(f)
     if length == 0:
         for e in j_config['units']:
             push_item(e, subtitle, e, e)
@@ -37,6 +34,6 @@ def main(wf):
 
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))

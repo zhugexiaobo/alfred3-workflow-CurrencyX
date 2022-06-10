@@ -1,10 +1,6 @@
 # -*- coding:utf-8 -*-
 import json,sys
-import urllib2
-from workflow import Workflow, web
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from workflow import Workflow3
 
 
 subtitle = 'Add new currency to panel'
@@ -25,7 +21,7 @@ def main(wf):
     args = [x.upper() for x in args]
     length = len(args)
     f = open('currencies.json', 'r')
-    j_currencies = json.load(f,'utf-8')
+    j_currencies = json.load(f)
     if length == 0:
         for e in j_currencies:
             push_item(e, subtitle, e, e)
@@ -39,7 +35,7 @@ def main(wf):
 
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))
     #main([])

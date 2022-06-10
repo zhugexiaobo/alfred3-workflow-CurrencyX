@@ -1,11 +1,6 @@
 # -*- coding:utf-8 -*-
 import json,sys
-import urllib2
-from workflow import Workflow, web
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
+from workflow import Workflow3
 
 
 def main(wf):
@@ -27,6 +22,6 @@ def main(wf):
 
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))

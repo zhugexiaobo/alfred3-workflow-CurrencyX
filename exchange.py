@@ -1,12 +1,10 @@
 # -*- coding:utf-8 -*-
 import json,sys
 import math,re
-import ssl, urllib2
+import ssl
 import time,os
-from workflow import Workflow, web
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from urllib import request
+from workflow import Workflow3
 
 
 number = '0123456789.'
@@ -128,7 +126,7 @@ return currencies name
 """
 def get_currencies_names():
     f = open('currencies.json','r')
-    j = json.load(f,'utf-8')
+    j = json.load(f)
     return j
 
 
@@ -142,18 +140,18 @@ def get_currencies_json():
     if time.time() - mtime < 300:
         f = open('data.json', 'r')
         try:
-            j = json.load(f,'utf-8')
+            j = json.load(f)
         except:
             os.remove('data.json')
             convert_url = api_url.format(default.id)
             ssl._create_default_https_context = ssl._create_unverified_context
-            req = urllib2.urlopen(convert_url)
+            req = request.urlopen(convert_url)
         f.close()
     else:
         f = open('data.json', 'w+')
         convert_url = api_url.format(default.id)
         ssl._create_default_https_context = ssl._create_unverified_context
-        req = urllib2.urlopen(convert_url)
+        req = request.urlopen(convert_url)
         j = json.load(req)
         #j = requests.request("GET", convert_url).json()
         json.dump(j,f)
@@ -165,7 +163,7 @@ load json from config.json
 """
 def load_data(value, path):
     f = open(path, "r")
-    data = json.load(f, encoding="utf-8")
+    data = json.load(f)
     default.base = data['base']
     for e in data['units']:
         default.units.append(e)
@@ -235,6 +233,6 @@ def main(wf):
 
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))

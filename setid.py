@@ -1,9 +1,8 @@
 import sys
-import urllib2, ssl
-from workflow import Workflow, web
+import ssl
+from urllib import request
+from workflow import Workflow3
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 subtitle = 'Set API id'
 
@@ -13,7 +12,7 @@ def test_id(myid):
     test_url = api_url.format(myid)
     ssl._create_default_https_context = ssl._create_unverified_context
     try:
-        req = urllib2.urlopen(test_url)
+        req = request.urlopen(test_url)
     except:
         return False
     #print(req, req.getcode())
@@ -39,6 +38,6 @@ def main(wf):
     wf.send_feedback()
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))

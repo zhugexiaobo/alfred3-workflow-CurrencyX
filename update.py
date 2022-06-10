@@ -1,11 +1,9 @@
 # -*- coding:utf-8 -*-
 import json,sys
-import urllib2, os
+import os
 import ssl
-from workflow import Workflow, web
-
-reload(sys)
-sys.setdefaultencoding('utf-8')
+from urllib import request
+from workflow import Workflow3
 
 currencies_url = 'https://openexchangerates.org/api/currencies.json?app_id={0}&show_alternative=1'
 default_id = ''
@@ -23,7 +21,7 @@ def main(wf):
         return
     ssl._create_default_https_context = ssl._create_unverified_context
     url = currencies_url.format(default_id)
-    req = urllib2.urlopen(url)
+    req = request.urlopen(url)
     j = json.load(req)
     #j = requests.request('GET', url).json()
     f = open('currencies.json','w+')
@@ -34,6 +32,6 @@ def main(wf):
 
 
 if __name__ == '__main__':
-    wf = Workflow()
+    wf = Workflow3()
     log = wf.logger
     sys.exit(wf.run(main))

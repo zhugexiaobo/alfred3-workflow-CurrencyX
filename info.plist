@@ -156,7 +156,7 @@
 				<string>Currency Exchange</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python exchange.py $1</string>
+/usr/bin/python3 exchange.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -225,7 +225,7 @@ python exchange.py $1</string>
 				<string>Add new currency to panel</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python add.py $1</string>
+/usr/bin/python3 add.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -276,7 +276,7 @@ python add.py $1</string>
 				<integer>102</integer>
 				<key>script</key>
 				<string>#!/bin/bash
-python write.py $1</string>
+python3 write.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -341,7 +341,7 @@ python write.py $1</string>
 				<string>Remove currency from panel</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python del.py $1</string>
+/usr/bin/python3 del.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -412,7 +412,7 @@ python del.py $1</string>
 				<string>Set a new base currency</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python base.py $1</string>
+/usr/bin/python3 base.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -477,7 +477,7 @@ python base.py $1</string>
 				<string>Updating.....Please Wait</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python update.py $1</string>
+/usr/bin/python3 update.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -546,7 +546,7 @@ python update.py $1</string>
 				<string>How to use</string>
 				<key>script</key>
 				<string>#!/bin/bash
-python help.py $1</string>
+/usr/bin/python3 help.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -597,7 +597,7 @@ python help.py $1</string>
 				<key>script</key>
 				<string>#!/bin/bash
 
-python setid.py $1</string>
+/usr/bin/python3 setid.py $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
